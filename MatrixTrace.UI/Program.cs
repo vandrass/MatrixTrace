@@ -1,12 +1,12 @@
-﻿using System;
-
-namespace MatrixTrace.UI
+﻿namespace MatrixTrace.UI
 {
-    class Program
+    using Microsoft.Extensions.DependencyInjection;
+
+    internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            ServiceCollection serviceCollection;
         }
     }
 }
