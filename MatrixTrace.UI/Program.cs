@@ -6,13 +6,15 @@
 
 namespace MatrixTrace.UI
 {
+    using MatrixTrace.Application;
     using Microsoft.Extensions.DependencyInjection;
 
-    internal class Program
+    public class Program
     {
-        internal static void Main()
+        public static void Main()
         {
-            ServiceCollection serviceCollection;
+            var serviceCollection = new ServiceCollection();
+
         }
     }
 }
