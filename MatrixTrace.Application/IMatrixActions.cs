@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IMatrix.cs" company="Ivan Goncharov">
+// <copyright file="IMatrixActions.cs" company="Ivan Goncharov">
 // Copyright (c) Ivan Goncharov. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------

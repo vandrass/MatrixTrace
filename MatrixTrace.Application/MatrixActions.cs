@@ -13,13 +13,13 @@ namespace MatrixTrace.Application
         public int MatrixTraceSearch(Matrix matrix)
         {
             int matrixTrace = 0;
-            for (int i = 0; i < _matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.GetMatrix.GetLength(0); i++)
             {
-                for (int j = 0; j < _matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.GetMatrix.GetLength(1); j++)
                 {
                     if (i == j)
                     {
-                        matrixTrace += _matrix[i, j];
+                        matrixTrace += matrix.GetMatrix[i, j];
                     }
                 }
             }
@@ -29,9 +29,9 @@ namespace MatrixTrace.Application
 
         public void PrintMatrix(Matrix matrix)
         {
-            for (int i = 0; i < _matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.GetMatrix.GetLength(0); i++)
             {
-                for (int j = 0; j < _matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.GetMatrix.GetLength(1); j++)
                 {
                     if (i == j)
                     {
@@ -39,7 +39,7 @@ namespace MatrixTrace.Application
                         Console.ForegroundColor = ConsoleColor.Black;
                     }
 
-                    Console.Write($"{_matrix[i, j]} ", ConsoleColor.Red);
+                    Console.Write($"{matrix.GetMatrix[i, j]} ", ConsoleColor.Red);
 
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
@@ -51,33 +51,33 @@ namespace MatrixTrace.Application
 
         public void PrintMatrixSnake(Matrix matrix)
         {
-            int hightRowIndex = _matrix.GetLength(0) - 1;
-            int hightColumnIndex = _matrix.GetLength(1) - 1;
+            int hightRowIndex = matrix.GetMatrix.GetLength(0) - 1;
+            int hightColumnIndex = matrix.GetMatrix.GetLength(1) - 1;
             int lowRowIndex = 0;
             int lowColumnIndex = 0;
-            int interationCounter = GetInterationCounter(_matrix.GetLength(0), _matrix.GetLength(0));
+            int interationCounter = GetInterationCounter(matrix.GetMatrix.GetLength(0), matrix.GetMatrix.GetLength(0));
             int i, j;
 
             while (interationCounter != 0)
             {
                 for (i = lowRowIndex, j = lowColumnIndex; j <= hightColumnIndex; j++)
                 {
-                    Console.Write(_matrix[i, j] + " ");
+                    Console.Write(matrix.GetMatrix[i, j] + " ");
                 }
 
                 for (i = lowRowIndex + 1, j = hightColumnIndex; i <= hightRowIndex; i++)
                 {
-                    Console.Write(_matrix[i, j] + " ");
+                    Console.Write(matrix.GetMatrix[i, j] + " ");
                 }
 
                 for (i = hightRowIndex, j = hightColumnIndex - 1; j >= lowColumnIndex; j--)
                 {
-                    Console.Write(_matrix[i, j] + " ");
+                    Console.Write(matrix.GetMatrix[i, j] + " ");
                 }
 
                 for (i = hightRowIndex - 1, j = lowColumnIndex; i > lowRowIndex; i--)
                 {
-                    Console.Write(_matrix[i, j] + " ");
+                    Console.Write(matrix.GetMatrix[i, j] + " ");
                 }
 
                 hightRowIndex--;

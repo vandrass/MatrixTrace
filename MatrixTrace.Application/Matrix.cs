@@ -14,6 +14,19 @@ namespace MatrixTrace.Application
         private const int MaxRandValue = 9;
         private int[,] _matrix;
 
+        public int[,] GetMatrix
+        {
+            get
+            {
+                return _matrix;
+            }
+        }
+
+
+        public Matrix(int[,] matrix)
+        {
+            _matrix = matrix;
+        }
 
         public Matrix(int rowsNumber, int columnNumber)
         {
