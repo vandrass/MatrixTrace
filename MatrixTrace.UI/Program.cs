@@ -27,7 +27,7 @@ namespace MatrixTrace.UI
 
             service.PrintMatrix(matrix);
             Console.WriteLine(service.GetMatrixTrace(matrix));
-            service.PrintMatrixSnake(matrix);
+            Console.WriteLine(service.PrintMatrixSnake(matrix));
 
             Console.ReadLine();
         }

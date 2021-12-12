@@ -12,6 +12,6 @@ namespace MatrixTrace.Application
 
         int GetMatrixTrace(Matrix matrix);
 
-        void PrintMatrixSnake(Matrix matrix);
+        string PrintMatrixSnake(Matrix matrix);
     }
 }

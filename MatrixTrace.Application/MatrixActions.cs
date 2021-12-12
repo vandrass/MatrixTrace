@@ -50,7 +50,7 @@ namespace MatrixTrace.Application
             }
         }
 
-        public void PrintMatrixSnake(Matrix matrix)
+        public string PrintMatrixSnake(Matrix matrix)
         {
             int hightRowIndex = matrix.GetMatrix.GetLength(0) - 1;
             int hightColumnIndex = matrix.GetMatrix.GetLength(1) - 1;
@@ -58,29 +58,28 @@ namespace MatrixTrace.Application
             int lowColumnIndex = 0;
             int interationCounter = GetInterationCounter(matrix.GetMatrix.GetLength(0), matrix.GetMatrix.GetLength(0));
             int i, j;
-            StringBuilder snakeString;
+            StringBuilder snakeString = new StringBuilder();
 
             while (interationCounter != 0)
             {
                 for (i = lowRowIndex, j = lowColumnIndex; j <= hightColumnIndex; j++)
                 {
                     snakeString.Append(matrix.GetMatrix[i, j] + " ");
-                    Console.Write(matrix.GetMatrix[i, j] + " ");
                 }
 
                 for (i = lowRowIndex + 1, j = hightColumnIndex; i <= hightRowIndex; i++)
                 {
-                    Console.Write(matrix.GetMatrix[i, j] + " ");
+                    snakeString.Append(matrix.GetMatrix[i, j] + " ");
                 }
 
                 for (i = hightRowIndex, j = hightColumnIndex - 1; j >= lowColumnIndex; j--)
                 {
-                    Console.Write(matrix.GetMatrix[i, j] + " ");
+                    snakeString.Append(matrix.GetMatrix[i, j] + " ");
                 }
 
                 for (i = hightRowIndex - 1, j = lowColumnIndex; i > lowRowIndex; i--)
                 {
-                    Console.Write(matrix.GetMatrix[i, j] + " ");
+                    snakeString.Append(matrix.GetMatrix[i, j] + " ");
                 }
 
                 hightRowIndex--;
@@ -89,6 +88,8 @@ namespace MatrixTrace.Application
                 lowColumnIndex++;
                 interationCounter--;
             }
+
+            return snakeString.ToString();
         }
 
         private int GetInterationCounter(int rows, int columns)
