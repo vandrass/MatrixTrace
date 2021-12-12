@@ -50,7 +50,7 @@ namespace MatrixTrace.Application
             }
         }
 
-        public string PrintMatrixSnake(Matrix matrix)
+        public string GetMatrixSnake(Matrix matrix)
         {
             int hightRowIndex = matrix.GetMatrix.GetLength(0) - 1;
             int hightColumnIndex = matrix.GetMatrix.GetLength(1) - 1;
@@ -72,12 +72,12 @@ namespace MatrixTrace.Application
                     snakeString.Append(matrix.GetMatrix[i, j] + " ");
                 }
 
-                for (i = hightRowIndex, j = hightColumnIndex - 1; j >= lowColumnIndex; j--)
+                for (i = hightRowIndex, j = hightColumnIndex - 1; j >= lowColumnIndex && hightRowIndex > lowRowIndex; j--)
                 {
                     snakeString.Append(matrix.GetMatrix[i, j] + " ");
                 }
 
-                for (i = hightRowIndex - 1, j = lowColumnIndex; i > lowRowIndex; i--)
+                for (i = hightRowIndex - 1, j = lowColumnIndex; i > lowRowIndex && hightColumnIndex > lowColumnIndex; i--)
                 {
                     snakeString.Append(matrix.GetMatrix[i, j] + " ");
                 }

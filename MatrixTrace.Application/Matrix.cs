@@ -22,7 +22,6 @@ namespace MatrixTrace.Application
             }
         }
 
-
         public Matrix(int[,] matrix)
         {
             _matrix = matrix;
