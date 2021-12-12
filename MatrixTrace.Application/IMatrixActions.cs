@@ -10,7 +10,7 @@ namespace MatrixTrace.Application
     {
         void PrintMatrix(Matrix matrix);
 
-        int MatrixTraceSearch(Matrix matrix);
+        int GetMatrixTrace(Matrix matrix);
 
         void PrintMatrixSnake(Matrix matrix);
     }

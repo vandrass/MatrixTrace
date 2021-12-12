@@ -10,7 +10,7 @@ namespace MatrixTrace.Application
 
     public class MatrixActions : IMatrixActions
     {
-        public int MatrixTraceSearch(Matrix matrix)
+        public int GetMatrixTrace(Matrix matrix)
         {
             int matrixTrace = 0;
             for (int i = 0; i < matrix.GetMatrix.GetLength(0); i++)
