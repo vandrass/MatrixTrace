@@ -10,6 +10,10 @@ namespace MatrixTrace.UnitTests
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Unit Tests for MatrixActions class methods: GetMatrixTrace,
+    /// GetMAtrixSnake.
+    /// </summary>
     [TestClass]
     public class MatrixActionsTests
     {
@@ -29,7 +33,7 @@ namespace MatrixTrace.UnitTests
         }
 
         /// <summary>
-        /// Input matrix 3x4 size, and to get right matrix trace,
+        /// Input matrix 3x4 size, and get right matrix trace,
         /// In Our variant is: 9.
         /// </summary>
         [TestMethod]
@@ -42,6 +46,25 @@ namespace MatrixTrace.UnitTests
 
             // Act
             var actual = _service.GetMatrixTrace(inputMatrix);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Input matrix 3x4 size, and get snake of matrix,
+        /// numbers from beginnig to center of matrix.
+        /// </summary>
+        [TestMethod]
+        public void GetSnake_InputMatrixThreeByThree_StringOfMatrixSnake()
+        {
+            // Arrange
+            int[,] matrix = { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 4, 5, 6, 7 } };
+            Matrix inputMatrix = new Matrix(matrix);
+            const string expected = "1 2 3 4 4 7 6 5 4 1 2 3 ";
+
+            // Act
+            var actual = _service.GetMatrixSnake(inputMatrix);
 
             // Assert
             Assert.AreEqual(expected, actual);
