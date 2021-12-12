@@ -8,26 +8,9 @@ namespace MatrixTrace.Application
 {
     using System;
 
-    public class MatrixActions : IMatrix
+    public class MatrixActions : IMatrixActions
     {
-        private const int MinRandValue = 1;
-        private const int MaxRandValue = 9;
-        private int[,] _matrix;
-
-        public void FillMatrix(int rowsNumber, int columnNumber)
-        {
-            _matrix = new int[rowsNumber, columnNumber];
-            var rand = new Random();
-            for (int i = 0; i < rowsNumber; i++)
-            {
-                for (int j = 0; j < columnNumber; j++)
-                {
-                    _matrix[i, j] = rand.Next(MinRandValue, MaxRandValue);
-                }
-            }
-        }
-
-        public int MatrixTraceSearch()
+        public int MatrixTraceSearch(Matrix matrix)
         {
             int matrixTrace = 0;
             for (int i = 0; i < _matrix.GetLength(0); i++)
@@ -44,7 +27,7 @@ namespace MatrixTrace.Application
             return matrixTrace;
         }
 
-        public void PrintMatrix()
+        public void PrintMatrix(Matrix matrix)
         {
             for (int i = 0; i < _matrix.GetLength(0); i++)
             {
@@ -66,7 +49,7 @@ namespace MatrixTrace.Application
             }
         }
 
-        public void PrintMatrixSnake()
+        public void PrintMatrixSnake(Matrix matrix)
         {
             int hightRowIndex = _matrix.GetLength(0) - 1;
             int hightColumnIndex = _matrix.GetLength(1) - 1;

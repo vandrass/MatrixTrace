@@ -6,14 +6,12 @@
 
 namespace MatrixTrace.Application
 {
-    public interface IMatrix
+    public interface IMatrixActions
     {
-        void FillMatrix(int rowsNumber, int columnNumber);
+        void PrintMatrix(Matrix matrix);
 
-        void PrintMatrix();
+        int MatrixTraceSearch(Matrix matrix);
 
-        int MatrixTraceSearch();
-
-        void PrintMatrixSnake();
+        void PrintMatrixSnake(Matrix matrix);
     }
 }
