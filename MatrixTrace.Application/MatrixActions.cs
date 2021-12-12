@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="Matrix.cs" company="Ivan Goncharov">
+// <copyright file="MatrixActions.cs" company="Ivan Goncharov">
 // Copyright (c) Ivan Goncharov. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -8,7 +8,7 @@ namespace MatrixTrace.Application
 {
     using System;
 
-    public class Matrix : IMatrix
+    public class MatrixActions : IMatrix
     {
         private const int MinRandValue = 1;
         private const int MaxRandValue = 9;
@@ -25,6 +25,23 @@ namespace MatrixTrace.Application
                     _matrix[i, j] = rand.Next(MinRandValue, MaxRandValue);
                 }
             }
+        }
+
+        public int MatrixTraceSearch()
+        {
+            int matrixTrace = 0;
+            for (int i = 0; i < _matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < _matrix.GetLength(1); j++)
+                {
+                    if (i == j)
+                    {
+                        matrixTrace += _matrix[i, j];
+                    }
+                }
+            }
+
+            return matrixTrace;
         }
 
         public void PrintMatrix()
@@ -47,23 +64,6 @@ namespace MatrixTrace.Application
 
                 Console.WriteLine();
             }
-        }
-
-        public int MatrixTraceSearch()
-        {
-            int matrixTrace = 0;
-            for (int i = 0; i < _matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < _matrix.GetLength(1); j++)
-                {
-                    if (i == j)
-                    {
-                        matrixTrace += _matrix[i, j];
-                    }
-                }
-            }
-
-            return matrixTrace;
         }
 
         public void PrintMatrixSnake()
@@ -111,7 +111,7 @@ namespace MatrixTrace.Application
             {
                 if (rows % 2 == 0)
                 {
-                    return rows / 2;
+                   return rows / 2;
                 }
 
                 return (rows + 1) / 2;

@@ -16,16 +16,25 @@ namespace MatrixTrace.UI
         {
             Console.WriteLine("Enter Number of Rows: ");
             int columnNumb = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Enter Number of Columns: ");
             int rowNumb = Convert.ToInt32(Console.ReadLine());
 
-            Matrix matrix = new Matrix(columnNumb, rowNumb);
-
-            matrix.PrintMatrix();
-
-            Console.WriteLine("Matrix Trace is: " + matrix.MatrixTrace);
-
             var serviceCollection = new ServiceCollection();
+
+            serviceCollection.AddScoped<IMatrix, MatrixActions>();
+
+            var provider = serviceCollection.BuildServiceProvider();
+
+            IMatrix service = provider.GetRequiredService<IMatrix>();
+
+            service.FillMatrix(rowNumb, columnNumb);
+
+            service.PrintMatrix();
+
+            Console.WriteLine(service.MatrixTraceSearch());
+
+            service.PrintMatrixSnake();
 
             Console.ReadLine();
         }
