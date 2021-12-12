@@ -28,8 +28,12 @@ namespace MatrixTrace.UnitTests
             _service = _provider.GetRequiredService<IMatrixActions>();
         }
 
+        /// <summary>
+        /// Input matrix 3x4 size, and to get right matrix trace,
+        /// In Our variant is: 9.
+        /// </summary>
         [TestMethod]
-        public void Test()
+        public void GetMatrixTrace_InputMatrixThreeByFour_MatrixTrace()
         {
             // Arrange
             int[,] matrix = { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 4, 5, 6, 7 } };

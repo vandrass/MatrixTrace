@@ -7,6 +7,7 @@
 namespace MatrixTrace.Application
 {
     using System;
+    using System.Text;
 
     public class MatrixActions : IMatrixActions
     {
@@ -57,11 +58,13 @@ namespace MatrixTrace.Application
             int lowColumnIndex = 0;
             int interationCounter = GetInterationCounter(matrix.GetMatrix.GetLength(0), matrix.GetMatrix.GetLength(0));
             int i, j;
+            StringBuilder snakeString;
 
             while (interationCounter != 0)
             {
                 for (i = lowRowIndex, j = lowColumnIndex; j <= hightColumnIndex; j++)
                 {
+                    snakeString.Append(matrix.GetMatrix[i, j] + " ");
                     Console.Write(matrix.GetMatrix[i, j] + " ");
                 }
 
