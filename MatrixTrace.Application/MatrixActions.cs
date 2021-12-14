@@ -9,8 +9,16 @@ namespace MatrixTrace.Application
     using System;
     using System.Text;
 
+    /// <summary>
+    /// Actions on Matrix class. Inherited from IMatrix Interface.
+    /// </summary>
     public class MatrixActions : IMatrixActions
     {
+        /// <summary>
+        /// Calculate Matrix Trace.
+        /// </summary>
+        /// <param name="matrix">Matrix instance.</param>
+        /// <returns>Return Calculating result.</returns>
         public int GetMatrixTrace(Matrix matrix)
         {
             int matrixTrace = 0;
@@ -28,6 +36,10 @@ namespace MatrixTrace.Application
             return matrixTrace;
         }
 
+        /// <summary>
+        /// Method Prints all matrix on the screen and indicates at matrix trace with color.
+        /// </summary>
+        /// <param name="matrix">Matrix instance for printing.</param>
         public void PrintMatrix(Matrix matrix)
         {
             for (int i = 0; i < matrix.GetMatrix.GetLength(0); i++)
@@ -50,6 +62,12 @@ namespace MatrixTrace.Application
             }
         }
 
+        /// <summary>
+        /// Method Builds snake string from input matrix.
+        /// Snake - spiral from start to center.
+        /// </summary>
+        /// <param name="matrix">Matrix instance.</param>
+        /// <returns>snake string.</returns>
         public string GetMatrixSnake(Matrix matrix)
         {
             int hightRowIndex = matrix.GetMatrix.GetLength(0) - 1;
