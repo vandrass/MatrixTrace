@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="MatrixActions.Test.cs" company="Ivan Goncharov">
+// <copyright file="MatrixActionsTests.cs" company="Ivan Goncharov">
 // Copyright (c) Ivan Goncharov. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -135,7 +135,7 @@ namespace MatrixTrace.UnitTests
         public void GetMatrixTrace_InputMatrixThreeByFive_MatrixTrace()
         {
             // Arrange
-            int[,] matrix = { { 3, 2, 3, 4, 9 }, { 1, 5, 3, 4, 8 }, { 4, 5, 6, 7, 4 }};
+            int[,] matrix = { { 3, 2, 3, 4, 9 }, { 1, 5, 3, 4, 8 }, { 4, 5, 6, 7, 4 } };
             var inputMatrix = new Matrix(matrix);
             int expected = 14;
 
@@ -287,7 +287,7 @@ namespace MatrixTrace.UnitTests
         public void GetSnake_InputMatrixThreeByTwo_StringOfMatrixSnake()
         {
             // Arrange
-            int[,] matrix = { { 1, 1 }, { 2, 2 }, { 3 , 3 } };
+            int[,] matrix = { { 1, 1 }, { 2, 2 }, { 3, 3 } };
             var inputMatrix = new Matrix(matrix);
             const string expected = "1 1 2 3 3 2 ";
 

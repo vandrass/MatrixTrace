@@ -14,14 +14,6 @@ namespace MatrixTrace.Application
         private const int MaxRandValue = 9;
         private int[,] _matrix;
 
-        public int[,] GetMatrix
-        {
-            get
-            {
-                return _matrix;
-            }
-        }
-
         public Matrix(int[,] matrix)
         {
             _matrix = matrix;
@@ -30,6 +22,14 @@ namespace MatrixTrace.Application
         public Matrix(int rowsNumber, int columnNumber)
         {
             FillMatrix(rowsNumber, columnNumber);
+        }
+
+        public int[,] GetMatrix
+        {
+            get
+            {
+                return _matrix;
+            }
         }
 
         private void FillMatrix(int rowsNumber, int columnNumber)
