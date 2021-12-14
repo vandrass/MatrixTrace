@@ -9,6 +9,7 @@ namespace MatrixTrace.UnitTests
     using MatrixTrace.Application;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    #pragma warning disable SA1500 // BracesForMultiLineStatementsMustNotShareLine
 
     /// <summary>
     /// Unit Tests for MatrixActions class methods: GetMatrixTrace,
