@@ -17,7 +17,7 @@ namespace MatrixTrace.UnitTests
     [TestClass]
     public class MatrixActionsTests
     {
-        private readonly ServiceCollection _serviceCollection = new ServiceCollection();
+        private readonly ServiceCollection _serviceCollection = new ();
         private ServiceProvider _provider;
         private IMatrixActions _service;
 
@@ -41,7 +41,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 2 }, { 1, 2 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 3;
 
             // Act
@@ -60,7 +60,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 1;
 
             // Act
@@ -79,7 +79,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 2, 3 }, { 1, 2, 3 }, { 4, 5, 6 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 9;
 
             // Act
@@ -98,7 +98,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 4, 5, 6, 7 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 9;
 
             // Act
@@ -117,7 +117,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 4, 5, 6, 7 }, { 5, 6, 7, 7 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 16;
 
             // Act
@@ -136,7 +136,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 3, 2, 3, 4, 9 }, { 1, 5, 3, 4, 8 }, { 4, 5, 6, 7, 4 }};
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 14;
 
             // Act
@@ -155,7 +155,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 3, 2, 3 }, { 1, 5, 3 }, { 4, 5, 6 }, { 6, 6, 6 }, { 5, 3, 1 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 14;
 
             // Act
@@ -174,7 +174,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 3 }, { 1 }, { 4 }, { 6 }, { 5 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             int expected = 3;
 
             // Act
@@ -193,7 +193,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 4, 5, 6, 7 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 2 3 4 4 7 6 5 4 1 2 3 ";
 
             // Act
@@ -212,7 +212,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 ";
 
             // Act
@@ -231,7 +231,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 2 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 2 ";
 
             // Act
@@ -250,7 +250,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1 }, { 1 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 1 ";
 
             // Act
@@ -269,7 +269,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 2 }, { 1, 2 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 2 2 1 ";
 
             // Act
@@ -288,7 +288,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 1 }, { 2, 2 }, { 3 , 3 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 1 2 3 3 2 ";
 
             // Act
@@ -307,7 +307,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 1, 1, 1 }, { 2, 2, 2, 2 }, { 3, 3, 3, 3 }, { 4, 4, 4, 4 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 1 1 1 2 3 4 4 4 4 3 2 2 2 3 3 ";
 
             // Act
@@ -326,7 +326,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 1, 1, 1, 1 }, { 2, 2, 2, 2, 2 }, { 3, 3, 3, 3, 3 }, { 4, 4, 4, 4, 4 }, { 5, 5, 5, 5, 5 }, { 6, 6, 6, 6, 6 }, { 7, 7, 7, 7, 7 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 1 1 1 1 2 3 4 5 6 7 7 7 7 7 6 5 4 3 2 2 2 2 3 4 5 6 6 6 5 4 3 3 4 5 ";
 
             // Act
@@ -345,7 +345,7 @@ namespace MatrixTrace.UnitTests
         {
             // Arrange
             int[,] matrix = { { 1, 1, 1, 1, 1, 1, 1 }, { 2, 2, 2, 2, 2, 2, 2 }, { 3, 3, 3, 3, 3, 3, 3 }, { 4, 4, 4, 4, 4, 4, 4 }, { 5, 5, 5, 5, 5, 5, 5 } };
-            Matrix inputMatrix = new Matrix(matrix);
+            var inputMatrix = new Matrix(matrix);
             const string expected = "1 1 1 1 1 1 1 2 3 4 5 5 5 5 5 5 5 4 3 2 2 2 2 2 2 3 4 4 4 4 4 3 3 3 3 ";
 
             // Act

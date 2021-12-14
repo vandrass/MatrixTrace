@@ -18,7 +18,7 @@ namespace MatrixTrace.UI
             int rowNumb = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Number of Columns: ");
             int columnNumb = Convert.ToInt32(Console.ReadLine());
-            Matrix matrix = new Matrix(rowNumb, columnNumb);
+            var matrix = new Matrix(rowNumb, columnNumb);
 
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddScoped<IMatrixActions, MatrixActions>();
