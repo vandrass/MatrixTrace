@@ -10,8 +10,14 @@ namespace MatrixTrace.UI
     using MatrixTrace.Application;
     using Microsoft.Extensions.DependencyInjection;
 
+    /// <summary>
+    /// Console User Interface of MatrixTrace.Application.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Start the programm, for working with MatrixTrace.Application.
+        /// </summary>
         public static void Main()
         {
             Console.WriteLine("Enter Number of Rows: ");
