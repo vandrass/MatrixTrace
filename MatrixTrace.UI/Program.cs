@@ -15,9 +15,9 @@ namespace MatrixTrace.UI
         public static void Main()
         {
             Console.WriteLine("Enter Number of Rows: ");
-            int columnNumb = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Number of Columns: ");
             int rowNumb = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Number of Columns: ");
+            int columnNumb = Convert.ToInt32(Console.ReadLine());
             Matrix matrix = new Matrix(rowNumb, columnNumb);
 
             var serviceCollection = new ServiceCollection();
@@ -26,8 +26,8 @@ namespace MatrixTrace.UI
             var service = provider.GetRequiredService<IMatrixActions>();
 
             service.PrintMatrix(matrix);
-            Console.WriteLine(service.GetMatrixTrace(matrix));
-            Console.WriteLine(service.GetMatrixSnake(matrix));
+            Console.WriteLine("Matrix Trace is: " + service.GetMatrixTrace(matrix));
+            Console.WriteLine("Matrix Snake: " + service.GetMatrixSnake(matrix));
 
             Console.ReadLine();
         }
