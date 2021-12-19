@@ -20,10 +20,23 @@ namespace MatrixTrace.UI
         /// </summary>
         public static void Main()
         {
-            Console.WriteLine("Enter Number of Rows: ");
-            int rowNumb = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Number of Columns: ");
-            int columnNumb = Convert.ToInt32(Console.ReadLine());
+            int rowNumb;
+            int columnNumb;
+
+            do
+            {
+                Console.WriteLine("Enter Number of Rows: ");
+                int.TryParse(Console.ReadLine(), out rowNumb);
+            }
+            while (rowNumb <= 0);
+
+            do
+            {
+                Console.WriteLine("Enter Number of Columns: ");
+                int.TryParse(Console.ReadLine(), out columnNumb);
+            }
+            while (columnNumb <= 0);
+
             var matrix = new Matrix(rowNumb, columnNumb);
 
             var serviceCollection = new ServiceCollection();
