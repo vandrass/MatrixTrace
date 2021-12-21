@@ -14,22 +14,11 @@
         /// </summary>
         public static void Main()
         {
-            int rowNumb;
-            int columnNumb;
+            Console.WriteLine("Enter Number of Rows: ");
+            var rowNumb = InputRowsOrColumns();
 
-            do
-            {
-                Console.WriteLine("Enter Number of Rows: ");
-                int.TryParse(Console.ReadLine(), out rowNumb);
-            }
-            while (rowNumb <= 0);
-
-            do
-            {
-                Console.WriteLine("Enter Number of Columns: ");
-                int.TryParse(Console.ReadLine(), out columnNumb);
-            }
-            while (columnNumb <= 0);
+            Console.WriteLine("Enter Number of Columns: ");
+            var columnNumb = InputRowsOrColumns();
 
             var matrix = new Matrix(rowNumb, columnNumb);
 
@@ -43,6 +32,25 @@
             Console.WriteLine("Matrix Snake: " + service.GetMatrixSnake(matrix));
 
             Console.ReadLine();
+        }
+
+        private static int InputRowsOrColumns()
+        {
+            int number;
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out number))
+                {
+                    Console.WriteLine("Wrong input value! Enter the number only: ");
+                }
+                else if (number <= 0)
+                {
+                    Console.WriteLine("Wrong input value! Enter the number greater than zero: ");
+                }
+            }
+            while (number <= 0);
+
+            return number;
         }
     }
 }

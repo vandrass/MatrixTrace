@@ -244,9 +244,9 @@
         public void GetSnake_InputMatrixTwoByOne_StringOfMatrixSnake()
         {
             // Arrange
-            int[,] matrix = { { 1 }, { 1 } };
+            int[,] matrix = { { 1 } };
             var inputMatrix = new Matrix(matrix);
-            const string expected = "1 1 ";
+            const string expected = "1 ";
 
             // Act
             var actual = _service.GetMatrixSnake(inputMatrix);

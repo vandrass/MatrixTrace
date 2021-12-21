@@ -68,7 +68,7 @@
             int hightColumnIndex = matrix.GetMatrix.GetLength(1) - 1;
             int lowRowIndex = 0;
             int lowColumnIndex = 0;
-            int interationCounter = GetInterationCounter(matrix.GetMatrix.GetLength(0), matrix.GetMatrix.GetLength(0));
+            int interationCounter = GetInterationCounter(matrix.GetMatrix.GetLength(0), matrix.GetMatrix.GetLength(1));
             int i, j;
             StringBuilder snakeString = new StringBuilder();
 
