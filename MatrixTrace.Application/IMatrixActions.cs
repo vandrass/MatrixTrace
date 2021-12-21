@@ -1,10 +1,4 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="IMatrixActions.cs" company="Ivan Goncharov">
-// Copyright (c) Ivan Goncharov. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace MatrixTrace.Application
+﻿namespace MatrixTrace.Application
 {
     /// <summary>
     /// interface for implementing actions on a matrix.

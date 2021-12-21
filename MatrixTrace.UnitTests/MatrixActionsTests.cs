@@ -1,10 +1,4 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="MatrixActionsTests.cs" company="Ivan Goncharov">
-// Copyright (c) Ivan Goncharov. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace MatrixTrace.UnitTests
+﻿namespace MatrixTrace.UnitTests
 {
     using MatrixTrace.Application;
     using Microsoft.Extensions.DependencyInjection;

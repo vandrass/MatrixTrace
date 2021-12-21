@@ -1,10 +1,4 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="MatrixActions.cs" company="Ivan Goncharov">
-// Copyright (c) Ivan Goncharov. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace MatrixTrace.Application
+﻿namespace MatrixTrace.Application
 {
     using System;
     using System.Text;
