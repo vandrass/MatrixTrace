@@ -115,15 +115,13 @@
 
                 return (rows + 1) / 2;
             }
-            else
-            {
-                if (rows % 2 == 0)
-                {
-                    return columns / 2;
-                }
 
-                return (columns + 1) / 2;
+            if (rows % 2 == 0)
+            {
+                return columns / 2;
             }
+
+            return (columns + 1) / 2;
         }
     }
 }

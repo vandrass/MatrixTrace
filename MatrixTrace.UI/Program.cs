@@ -39,13 +39,21 @@
             int number;
             do
             {
-                if (!int.TryParse(Console.ReadLine(), out number))
+                if (int.TryParse(Console.ReadLine(), out number))
                 {
-                    Console.WriteLine("Wrong input value! Enter the number only: ");
+                    if (number > 25000)
+                    {
+                        Console.WriteLine("Enter the number no more than 25000: ");
+                        number = 0;
+                    }
+                    else if (number <= 0)
+                    {
+                        Console.WriteLine("Wrong input value! Enter the number greater than zero: ");
+                    }
                 }
-                else if (number <= 0)
+                else
                 {
-                    Console.WriteLine("Wrong input value! Enter the number greater than zero: ");
+                    Console.WriteLine("Wrong input value! Enter the numbers only and no more than 25000: ");
                 }
             }
             while (number <= 0);
